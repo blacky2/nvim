@@ -1,0 +1,4 @@
+--
+-- mason
+--
+require('mason').setup()
