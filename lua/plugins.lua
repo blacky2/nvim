@@ -51,8 +51,13 @@ require('lazy').setup({
     keys = {
       { "<leader>ww", "<cmd>VimwikiIndex 0<cr>", desc = "VimWiki" },
     },
-    init = require('plugins.vim_wiki').init
-
+    ft='markdown',
+    init = require('plugins.vim_wiki').init,
+  },
+  {
+    'iamcco/markdown-preview.nvim',
+    build = function() vim.fn["mkdp#util#install"]() end,
+    ft = {'markdown', 'pandoc.markdown', 'rmd'}
   },
   {
     'lervag/vimtex',                                    -- latex
