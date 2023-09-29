@@ -4,12 +4,12 @@ local utils = require('utils')
 -- LSP servers
 --
 local lsp_servers = {
-    'lua_ls',
-    'pylsp',
-    'pyright',
-    'ltex',
-    'graphql',
-    'clangd'
+  'lua_ls',
+  'pylsp',
+  'pyright',
+  'ltex',
+  'graphql',
+  'clangd'
 }
 
 --
@@ -31,7 +31,6 @@ local lsp_defaults = {
   capabilities = require('cmp_nvim_lsp').default_capabilities(),
   -- keymappings
   on_attach = function(_, bufnr)
-
     -- use buffernr: https://tkg.codes/guide-to-modern-neovim-setup-2021/
     -- TODO update utils function utils.nnoremap('gd', ':lua vim.lsp.buf.definition()<cr>')
     local nmap = function(keys, func, desc)
@@ -49,10 +48,11 @@ local lsp_defaults = {
     -- goto and select
     -- plain lsp: vim.lsp.buf.references
     nmap('gr', require('telescope.builtin').lsp_references, '[G]oto [R]references')
+
     -- plain lsp: vim.lsp.buf.document_symbol
-    nmap('ds', require('telescope.builtin').lsp_document_symbols, '[D]ocument [S]ymbols')
-    nmap('dw', vim.lsp.buf.workspace_symbol)
-    nmap('ws', require('telescope.builtin').lsp_dynamic_workspace_symbols, '[W]orkspace [S]ymbols')
+    nmap('<leader>ds', require('telescope.builtin').lsp_document_symbols, '[D]ocument [S]ymbols')
+    nmap('<leader>dW', vim.lsp.buf.workspace_symbol)
+    nmap('<leader>dw', require('telescope.builtin').lsp_dynamic_workspace_symbols, '[W]orkspace [S]ymbols')
     -- doc
     nmap('K', vim.lsp.buf.hover, 'Hover Documentation')
     nmap('<c-k>', vim.lsp.buf.signature_help, 'Signature Documentation')

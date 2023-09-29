@@ -16,8 +16,8 @@ return {
 
       -- keymappings
       vim.keymap.set('n', '<Leader>dc', function() require('dap').continue() end)
-      vim.keymap.set('n', '<Leader>ds', function() require('dap').step_over() end)
-      vim.keymap.set('n', '<Leader>dS', function() require('dap').step_into() end)
+      vim.keymap.set('n', '<Leader>dj', function() require('dap').step_over() end)
+      vim.keymap.set('n', '<Leader>dJ', function() require('dap').step_into() end)
       vim.keymap.set('n', '<Leader>do', function() require('dap').step_out() end)
       vim.keymap.set('n', '<Leader>db', function() require('dap').toggle_breakpoint() end)
       vim.keymap.set('n', '<Leader>dC', function() require('dap').run_to_cursor() end)
